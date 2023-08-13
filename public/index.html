@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WP test</title>
+    <link rel="stylesheet" href="../src/index.css">
+<!--    <script src="dist/bundle.js" defer></script>-->
+<!--    <script src="index.js" defer></script>-->
+</head>
+<body>
+<section>
+    <div class="forest_bg">
+        <div class="wrapper" id='app'>
+            <div class="image forest" id='0'>
+                <audio src="./assets/sounds/summer.mp3" preload="auto" class="0"></audio>
+                <img src='./assets/icons/sun.svg' alt="0"/>
+            </div>
+            <div class="image rain" id='1'>
+                <audio src="./assets/sounds/rain.mp3" preload="auto" class="1"></audio>
+                <img src='./assets/icons/cloud-rain.svg' alt="1"/>
+            </div>
+            <div class="image snow" id='2'>
+                <audio src="./assets/sounds/winter.mp3" preload="auto" class="2"></audio>
+                <img src='./assets/icons/cloud-snow.svg' alt="2"/>
+            </div>
+        </div>
+        <div>
+            <input type="range" id="volume" name="volume" min="0" max="1" value=volume step="0.1"/>
+        </div>
+    </div>
+</section>
+</body>
+</html>

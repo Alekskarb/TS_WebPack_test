@@ -1,0 +1,43 @@
+.forest_bg {
+  background-position: center center;
+  width: auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  z-index: 11;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  height: 40%;
+  margin: 0 auto;
+}
+
+.image {
+  width: 300px;
+  height: 300px;
+  border: 2px white solid;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.forest {
+  background-image: url("../public/assets/summer-bg.jpg");
+}
+.rain {
+  background-image: url("../public/assets/rainy-bg.jpg");
+}
+.snow {
+  background-image: url("../public/assets/winter-bg.jpg");
+}
+
+img {
+  width: 80px;
+}
