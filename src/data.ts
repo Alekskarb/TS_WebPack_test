@@ -1,4 +1,11 @@
-export default [
+interface IData {
+    img: string,
+    audio: string,
+    icon: string,
+    name: string
+}
+
+export const data = [
     {
         img: './assets/summer-bg.jpg',
         audio: './assets/sounds/summer.mp3',
@@ -17,4 +24,4 @@ export default [
         icon: './assets/icons/cloud-snow.svg',
         name: 'winter'
     },
-]
+] as IData[]

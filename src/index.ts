@@ -1,15 +1,15 @@
-import data from "./data";
+import {data}  from "./data";
 
-const bg = document.querySelector('.forest_bg');
-const range = document.querySelector('input');
-const images = document.querySelectorAll('.image')
+const bg  = document.querySelector<HTMLDivElement>('.forest_bg');
+const range = document.querySelector<HTMLInputElement>('input');
+const images = document.querySelectorAll('.image');
 const sounds = Array.from(document.querySelectorAll('audio'));
 const pictures = document.querySelectorAll('img');
 let volume = 0.2;
 
-bg.style.backgroundImage = 'url(./assets/summer-bg.jpg)';
+bg ? bg.style.backgroundImage = 'url(./assets/summer-bg.jpg)' : '';
 
-function setVolume(e) {
+function setVolume(e: any) {
     volume = e.target.value;
     sounds.find(a => {
         if (!a.paused)
@@ -17,7 +17,7 @@ function setVolume(e) {
     })
 }
 
-range.addEventListener('click', setVolume);
+range!.addEventListener('click', setVolume);
 
 function setBGandPlay() {
     pictures.forEach(pict => {
@@ -30,10 +30,10 @@ images.forEach(i => {
 i.addEventListener('click', setBGandPlay);
 })
 
-function getEvent(e) {
+function getEvent(e: any) {
     images.forEach((image) => {
             if (e.target.alt === image.id) {
-                bg.style.backgroundImage = `url(${data[+image.id].img})`;
+                bg!.style.backgroundImage = `url(${data[+image.id].img})`;
                 sounds[+image.id].volume = volume;
                 sounds[+image.id].paused
                     ? sounds[+image.id].play()

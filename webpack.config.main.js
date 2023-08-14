@@ -2,11 +2,11 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-// const ESLintPlugin = require('eslint-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
     context: path.resolve(__dirname, 'src'),
-    entry: "./index.js",
+    entry: "./index.ts",
     resolve: {
         extensions: ['.tsx', '.jsx', '.js', '.ts']
     },
@@ -29,7 +29,7 @@ module.exports = {
             ]
         }),
         new MiniCssExtractPlugin(),
-        // new ESLintPlugin()
+        new ESLintPlugin()
     ],
     module: {
         rules: [
@@ -45,6 +45,23 @@ module.exports = {
                 test: /\.(woff|woff2|eot|ttf|otf)$/i,
                 type: "asset/resource"
             },
+            {
+                test: /\.txt$/, use: 'raw-loader'
+            },
+            {
+                test: /\.(ts|js)x?$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "babel-loader",
+                    options: {
+                        presets: [
+                            "@babel/preset-env",
+                            // "@babel/preset-typescript",
+                        ]
+                    }
+                }
+            },
+            { test: /\.json$/, loader: "json" }
         ]
     }
 }
