@@ -19,7 +19,8 @@
       }
     ],
     "@typescript-eslint/array-type": "error",
-    "@typescript-eslint/no-explicit-any": ["warn", { "ignoreRestArgs": true }]
+    "@typescript-eslint/no-explicit-any": ["warn", { "ignoreRestArgs": true }],
+    "@typescript-eslint/no-var-requires": 0
   },
   "parserOptions": {
     "sourceType": "module",

@@ -6,9 +6,9 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
     context: path.resolve(__dirname, 'src'),
-    entry: "./index.ts",
+    entry: "./index.js",
     resolve: {
-        extensions: ['.tsx', '.jsx', '.js', '.ts']
+        extensions: ['.tsx', '.jsx', '.js', '.ts', '.css']
     },
     output: {
         // filename: "build.js",
@@ -47,19 +47,6 @@ module.exports = {
             },
             {
                 test: /\.txt$/, use: 'raw-loader'
-            },
-            {
-                test: /\.(ts|js)x?$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: "babel-loader",
-                    options: {
-                        presets: [
-                            "@babel/preset-env",
-                            // "@babel/preset-typescript",
-                        ]
-                    }
-                }
             },
             { test: /\.json$/, loader: "json" }
         ]

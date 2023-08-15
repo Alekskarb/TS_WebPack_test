@@ -1,4 +1,5 @@
 import {data}  from "./data";
+import '../public/assets/index.css';
 
 const bg  = document.querySelector<HTMLDivElement>('.forest_bg');
 const range = document.querySelector<HTMLInputElement>('input');
@@ -27,7 +28,7 @@ function setBGandPlay() {
 }
 
 images.forEach(i => {
-i.addEventListener('click', setBGandPlay);
+    i.addEventListener('click', setBGandPlay);
 })
 
 function getEvent(e: any) {
